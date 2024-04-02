@@ -12,20 +12,42 @@ const ASSISTANT_DEFAULT_INSTRUCTIONS = "You are a personal translator. Help me w
 
 // Step 1: Create an Assistant
 const createAssistant = async () => {
-  return await openai.beta.assistants.create({
-    name: ASSISTANT_NAME,
-    instructions: ASSISTANT_DEFAULT_INSTRUCTIONS,
-    model:  LANGUAGE_MODEL
-  });
+  try {
+    return await openai.beta.assistants.create({
+      name: ASSISTANT_NAME,
+      instructions: ASSISTANT_DEFAULT_INSTRUCTIONS,
+      model:  LANGUAGE_MODEL
+    });
+  } catch(e) {
+    console.error(e)
+  }
 };
 
 // Step 2: Create a Thread
 const createThread = async () => {
-  return await openai.beta.threads.create();
+  try {
+    return await openai.beta.threads.create();
+  } catch(e) {
+    console.error(e)
+  }
+ 
 };
 
 // Step 3: Add a Message to a Thread
-const addMessageToThread = async (thread, input) => {};
+const addMessageToThread = async (thread, input) => {
+  try {
+    return await openai.beta.threads.messages.create(
+      thread.id,
+      {
+        role: "user",
+        content: input
+      }
+    );
+  } catch(e) {
+    console.error(e)
+  }
+  
+};
 
 // Step 4: Run the Assistant
 const runThread = async (assistant, thread) => {};
@@ -54,8 +76,8 @@ async function main() {
   // Step 2: Create a Thread
   const thread = await createThread()
 
-  console.log("assistant", assistant)
-  console.log("thread", thread)
+  // console.log("assistant", assistant)
+  // console.log("thread", thread)
 
   while (true) {
    
@@ -65,6 +87,10 @@ async function main() {
       process.exit();
     }
     // Step 3: Add a Message to a Thread
+    const message = await addMessageToThread(thread, userMessage)
+
+    //print user message
+    // console.log("user: " + message.content[message.content.length - 1].text.value)
 
     // Step 4: Run the Assistant
 
