@@ -11,7 +11,13 @@ const ASSISTANT_NAME = "French-English Translator";
 const ASSISTANT_DEFAULT_INSTRUCTIONS = "You are a personal translator. Help me with translating French to English and English to French. Démarrer la réponse avec 'traduction:', pour la traduction en français ou 'translation:', pour la traduction en anglais ";
 
 // Step 1: Create an Assistant
-const createAssistant = async () => {};
+const createAssistant = async () => {
+  return await openai.beta.assistants.create({
+    name: ASSISTANT_NAME,
+    instructions: ASSISTANT_DEFAULT_INSTRUCTIONS,
+    model:  LANGUAGE_MODEL
+  });
+};
 
 // Step 2: Create a Thread
 const createThread = async () => {};
@@ -41,6 +47,7 @@ async function main() {
   console.log("to exit Chat type 'X'");
 
   // Step 1: Create an Assistant
+  const assistant = await createAssistant()
 
   // Step 2: Create a Thread
 
