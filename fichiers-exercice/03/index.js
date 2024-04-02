@@ -20,7 +20,9 @@ const createAssistant = async () => {
 };
 
 // Step 2: Create a Thread
-const createThread = async () => {};
+const createThread = async () => {
+  return await openai.beta.threads.create();
+};
 
 // Step 3: Add a Message to a Thread
 const addMessageToThread = async (thread, input) => {};
@@ -50,6 +52,10 @@ async function main() {
   const assistant = await createAssistant()
 
   // Step 2: Create a Thread
+  const thread = await createThread()
+
+  console.log("assistant", assistant)
+  console.log("thread", thread)
 
   while (true) {
    
