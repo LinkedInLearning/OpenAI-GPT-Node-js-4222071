@@ -65,7 +65,20 @@ const createRun = async (assistant, thread) => {
 };
 
 // Step 5: Check the Run Status
-const checkRunStatus = async (run, thread) => {};
+const checkRunStatus = async (run, thread) => {
+  try {
+
+    run = await openai.beta.threads.runs.retrieve(
+      thread.id,
+      run.id
+    );
+    console.log("Run status: ", run.status + "\n")
+
+  } catch(error) {
+    console.error(error)
+  }
+
+};
 
 // Step 6: Retrieve and display the Messages
 const retrieveMessages = async (run, thread, message, assistant) => {};
@@ -106,9 +119,17 @@ async function main() {
 
     // Step 4: Run the Assistant
     const run = await createRun(assistant, thread)
-    console.dir(run)
+    // console.dir(run)
 
     // Step 5: Check the Run Status
+    while (['queued', 'in_progress', 'cancelling'].includes(run.status)) {
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+      checkRunStatus(run, thread)
+      if (run.status === "failed" || run.status === "expired") {
+        console.log("Chat terminated.");
+        // process.exit();
+      }
+    }
 
     // Step 6: Retrieve and display the Messages
 
