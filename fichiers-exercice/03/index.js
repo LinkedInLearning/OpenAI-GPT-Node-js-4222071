@@ -50,7 +50,19 @@ const addMessageToThread = async (thread, input) => {
 };
 
 // Step 4: Run the Assistant
-const runThread = async (assistant, thread) => {};
+const createRun = async (assistant, thread) => {
+  try {
+    return await openai.beta.threads.runs.create(
+      thread.id,
+      { 
+        assistant_id: assistant.id,
+        instructions: ""
+      }
+    );
+  } catch(error) {
+    console.log(error)
+  }
+};
 
 // Step 5: Check the Run Status
 const checkRunStatus = async (run, thread) => {};
@@ -93,6 +105,8 @@ async function main() {
     // console.log("user: " + message.content[message.content.length - 1].text.value)
 
     // Step 4: Run the Assistant
+    const run = await createRun(assistant, thread)
+    console.dir(run)
 
     // Step 5: Check the Run Status
 
