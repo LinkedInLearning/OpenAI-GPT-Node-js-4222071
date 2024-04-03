@@ -81,7 +81,7 @@ const checkRunStatus = async (run, thread) => {
 };
 
 // Step 6: Retrieve and display the Messages
-const retrieveMessages = async (run, thread, message, assistant) => {};
+const retrieveMessages = async (run, thread) => {};
 
 function getInput(promptMessage) {
   return readlineSync.question(promptMessage, {
