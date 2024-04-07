@@ -20,9 +20,10 @@ La branche master correspond au code à la fin de la formation.
 ## Installation
 
 1. Pour utiliser ces fichiers d’exercice, vous avez besoin de : 
-   - [Liste des logiciels/dépendances utiles à la formation] 
+   - un code éditeur [Visual Studio Code](https://code.visualstudio.com/)
+   - [Node 19+](https://nodejs.org/en/download) 
 2. Clonez ce dossier Repository sur votre machine locale (Mac), CMD (Windows), ou sur un outil GUI tel que SourceTree. 
-3. [Instructions spécifiques au cours] 
+3. Créer un compte sur [OpenAI](https://auth0.openai.com/u/login/identifier?state=hKFo2SBHNENJR29Eem9NelNOYVRaVkg0aGU5STRvRkhTajN4bqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDVBWkttRkZVVGRvcHpwdjJQWG8yRzhkM3g1WHNDZHY1o2NpZNkgRFJpdnNubTJNdTQyVDNLT3BxZHR3QjNOWXZpSFl6d0Q)
 
 
 ### Formateur
