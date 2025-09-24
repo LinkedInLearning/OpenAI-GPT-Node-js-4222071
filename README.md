@@ -6,6 +6,8 @@ Ce dossier Repository est lié au cours `L'essentiel d'OpenAI et des modèles de
 
 Les modèles de langage GPT d'Open AI, ou ChatGPT, sont capables d'exécuter diverses tâches de traitement de texte de manière autonome comme générer, synthétiser, traduire du contenu et corriger les fautes d’orthographe. Dans ce cours, abordez des exemples pilotés par l'intelligence artificielle générative pour générer du contenu, des images et du code. Apprenez à parler aux machines à l'aide de la technologie du NLP (Natural Language Processing) qui permet aux appareils d'imiter le comportement humain et le langage naturel. Sandy Ludosky, développeuse web, vous présente les concepts clés de l'IA Générative et les méthodes pour utiliser les nombreuses capacités de ces modèles de langage et développer des applications de nouvelle génération commandées par l'IA.
 
+La meilleure façon d'apprendre un langage est de l'utiliser dans la pratique. C'est pourquoi ce cours est intégré à GitHub Codespaces, un environnement de développement instantané « dans le nuage » qui offre toutes les fonctionnalités de votre IDE préféré sans nécessiter de configuration sur une machine locale. Avec Codespaces, vous pouvez vous exercer à partir de n'importe quelle machine, à tout moment, tout en utilisant un outil que vous êtes susceptible de rencontrer sur votre lieu de travail. 
+
 ## Instructions
 
 Ce dossier Repository a des branches pour chacune des vidéos du cours. Vous pouvez utiliser le menu des Branches sur GitHub afin d’accéder aux passages qui vous intéressent. Vous pouvez également rajouter `/tree/BRANCH_NAME` à l’URL afin d’accéder à la branche qui vous intéresse. 
